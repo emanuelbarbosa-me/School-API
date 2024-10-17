@@ -6,3 +6,6 @@ def validate_nome(nome):
 
 def validate_celular(celular):
     return len(celular) != 13
+
+def validade_codigo(codigo):
+    return len(codigo)
