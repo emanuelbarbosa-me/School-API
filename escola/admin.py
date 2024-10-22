@@ -1,5 +1,7 @@
 from django.contrib import admin
 from escola.models import Estudante,Curso
+from django.contrib.auth.models import Group, User
+
 
 class Estudantes(admin.ModelAdmin):
     list_display = ('id','nome','email','cpf','data_nascimento','celular')
@@ -15,3 +17,4 @@ class Cursos(admin.ModelAdmin):
     search_fields = ('codigo',)
 
 admin.site.register(Curso,Cursos)
+

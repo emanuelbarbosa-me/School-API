@@ -13,4 +13,6 @@ urlpatterns = [
     path('',include(router.urls)),
     path('estudantes/<int:pk>/matriculas/',ListaMatriculaEstudante.as_view()),
     path('cursos/<int:pk>/matriculas/',ListaMatriculaCurso.as_view()),
+    path('api/v2/estudantes/', EstudanteViewSet.as_view({'get': 'list_v2', 'post': 'create_v2'}), name='estudante-list-v2'),
+
 ]
