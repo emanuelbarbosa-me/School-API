@@ -2,6 +2,9 @@ from escola.models import Estudante,Curso, Matricula
 from escola.serializers import EstudanteSerializer,CursoSerializer, MatriculaSerializer,ListaMatriculasEstudanteSerializer,ListaMatriculasCursoSerializer, EstudanteSerializerV2
 from rest_framework import viewsets, generics, filters
 from django_filters.rest_framework import DjangoFilterBackend
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+from rest_framework.permissions import AllowAny
 
 class EstudanteViewSet(viewsets.ModelViewSet):
     queryset = Estudante.objects.all().order_by("-id")
@@ -39,3 +42,16 @@ class ListaMatriculaCurso(generics.ListAPIView):
         queryset = Matricula.objects.filter(curso_id=self.kwargs['pk'])
         return queryset
     serializer_class = ListaMatriculasCursoSerializer
+
+    schema_view = get_schema_view(
+    openapi.Info(
+        title="Documentação da API",
+        default_version='v1',
+        description="Descrição da API",
+        terms_of_service="https://www.google.com/policies/terms/",
+        contact=openapi.Contact(email="contato@exemplo.com"),
+        license=openapi.License(name="Licença MIT"),
+         ),
+    public=True,
+    permission_classes=(AllowAny,),
+)
