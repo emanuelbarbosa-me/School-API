@@ -7,7 +7,7 @@ from drf_yasg import openapi
 from rest_framework.permissions import AllowAny
 
 router = routers.DefaultRouter()
-router.register('estudantes', EstudanteViewSet, basename='Estudantes')
+router.register('estudantes', EstudanteViewSet, basename='estudantes')
 router.register('cursos', CursoViewSet, basename='Cursos')
 router.register('matriculas', MatriculaViewSet, basename='Matriculas')
 

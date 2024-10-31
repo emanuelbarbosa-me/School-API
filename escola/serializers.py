@@ -51,3 +51,6 @@ class EstudanteSerializerV2(serializers.ModelSerializer):
         model = Estudante
         fields = ['id','nome','email','celular']
         
+
+
+    

@@ -6,7 +6,7 @@ class ModelEstudanteTestCase(TestCase):
         self.estudante = Estudante.objects.create(
             nome = 'test do mudelo de estudante',
             email = 'test@gmail.com',
-            cpf = '48521353049',
+            cpf = '68837738005',
             data_nascimento = '2000-12-02',
             celular = '84 99999-9999')
 
@@ -14,7 +14,7 @@ class ModelEstudanteTestCase(TestCase):
         '''Testa os atributos de um aluno quado ele criado na base de dados'''
         self.assertEqual(self.estudante.nome, 'test do mudelo de estudante')
         self.assertEqual(self.estudante.email, 'test@gmail.com')
-        self.assertEqual(self.estudante.cpf, '48521353049')
+        self.assertEqual(self.estudante.cpf, '68837738005')
         self.assertEqual(self.estudante.data_nascimento, '2000-12-02')
         self.assertEqual(self.estudante.celular, '84 99999-9999')
 
